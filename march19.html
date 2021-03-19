@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>March 19</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. Viết một chương trình để nhập một chuỗi từ bàn phím và in ra màn hình độ dài của chuỗi đó.
+
+        function print() {
+            var input = prompt("Type something");
+            var lenght = input.length;
+            alert(lenght);
+        }
+        // print(length)
+
+        // 2: Viết hàm tính trung bình cộng của một mảng. mảng này người dùng nhập từ màn hình
+        function average() {
+            var arr = [];
+            var length = parseInt(prompt("Nhap do dai cua mang"));
+            for (var i = 0; i < length; i++) {
+                arr[i] = parseInt(prompt("Nhap gia tri cac phan tu cua mang"));
+            }
+            let total = 0;
+
+            for (var i = 0; i < arr.length; i++) {
+                total += arr[i];
+            }
+            let avg;
+            avg = total / arr.length;
+            alert("Trung binh cong = " + avg);
+        }
+
+        // average();
+
+        // 3: Viết hàm tìm giá trị lớn nhất, giá trị nhỏ nhất của một mảng. Mảng này người dùng nhập từ màn hình
+        function findMinMax() {
+            var arr = [];
+            var length = parseInt(prompt("Nhap do dai cua mang"));
+            for (let i = 0; i < length; i++) {
+                arr[i] = parseInt(prompt("Nhap gia tri cac phan tu cua mang"));
+            }
+
+            let min = arr[0];
+            for (let i = 0; i < length; i++) {
+                if (min < arr[i]) {
+                    min = arr[i];
+                }
+            }
+
+            let max = arr[0];
+            for (let i = 0; i < length; i++) {
+                if (max > arr[i]) {
+                    max = arr[i];
+                }
+            }
+            alert("Min la: " + min);
+            alert("Max la: " + max);
+        }
+
+        // findMinMax()
+
+        // 4: Viết hàm cộng trừ nhân chia hai số nhập từ màn hình
+
+        function calc(operator) {
+            let a = parseInt(prompt("Nhap so thu nhat"));
+            let b = parseInt(prompt("Nhap so thu hai"));
+            let result;
+            switch (operator) {
+                case "+":
+                    result = a + b;
+                    break;
+                case "-":
+                    result = a - b;
+                    break;
+                case "*":
+                    result = a * b;
+                    break;
+                case "/":
+                    result = a / b;
+                    break;
+            }
+            alert(result);
+        }
+
+        //   calc("*")
+
+        // 5: Viết hàm kiểm tra giá trị người dùng nhập có phải là số nguyên hay không. hiển thị thông báo
+        function isInteger() {
+            let number = parseInt(prompt("Enter your number"));
+            if (number == parseInt(number)) {
+                alert("Day la so nguyen")
+            } else {
+                alert("Day la khong phai so nguyen")
+            }
+        }
+
+        isInteger()
+
+        // 6: Viết hàm cho phép người dùng nhập tên là hiển thị lời chào
+        function greeting() {
+            let input = prompt("Enter your name");
+            if (input.length > 1) {
+                alert("Xin chao " + input);
+            }
+        }
+
+        //   greeting();
+
+        // 7: Viết chương trình cho phép thêm mới một phần tử trong mảng
+        function addElement(value, index) {
+            let array = ["shit", "poop"];
+            for (let i = array.length; i > index; i--) {
+                array[i] = array[i - 1];
+            }
+            array[index] = value;
+            console.log(array);
+        }
+
+        // addElement("gold", 0);
+
+        // 8: Viết chương trình cho phép xóa một phần tử trong mảng
+        function delElement(index) {
+            let myArray = ["shit", "poop", "gold"];
+            let myNewArray = [];
+            for (let i = 0; i < index; i++) {
+                myNewArray[i] = myArray[i];
+            }
+            for (let j = index + 1; j < arr.length; j++) {
+                myNewArray[j - 1] = myArray[j];
+            }
+            console.log(myNewArray);
+        }
+
+        // delElement(2);
+
+        // 9: Viết chương trình cho phép tìm kiếm một phần tử trong mảng
+        function findElement(value) {
+            let myArray = [1, 4, 5, 4234, 5423, 63, 413, 66];
+            for (let i = 0; i < myArray.length; i++) {
+                if (value == myArray[i]) {
+                    return i;
+                } else {
+                    return -1;
+                }
+            }
+        }
+
+        // findElement(66);
+
+        // 10: Viết chương trình đếm các số lượng các phần tử lặp trong mảng
+        function countLooped() {
+            let myArray = [29, 1, 2, 29, 29, 412, 124, 310, 29, 29, 29, 29, 310];
+            myArray.sort;
+
+            for (let i = 0; i < myArray.length; i++) {
+                let count = 0;
+                if (myArray[i] == myArray[i + 1]) {
+                    continue;
+                } else {
+                    for (let j = 0; j < myArray.length; j++) {
+                        if (myArray[i] == myArray[j]) {
+                            count++;
+                        }
+                    }
+                } 
+                if (count > 1) {
+                    console.log(myArray[i] + "lap " + count + " lan");
+                }
+                
+            }
+        }
+
+        countLooped();
+    </script>
+</body>
+
+</html>
